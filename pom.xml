@@ -4,17 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>projects</groupId>
-    <artifactId>sampleroomspring962</artifactId>
+    <artifactId>sampleroomspring</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <app.name>sampleroomspring</app.name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <java.version>1.8</java.version>
-
-        <app.name>sampleroomspring962</app.name>
     </properties>
 
     <parent>
@@ -73,6 +72,14 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.3.4</version>
+                <configuration>
+                    <repository>${project.artifactId}</repository>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
